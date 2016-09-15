@@ -21,7 +21,7 @@ public class ViewOtherProfile extends AppCompatActivity {
         setContentView(R.layout.activity_view_other_profile);
         initView();
         Intent intent = getIntent();
-        user = (User) intent.getExtras().getSerializable("user");
+        user = (User) intent.getSerializableExtra("user");
 
         initFields();
 

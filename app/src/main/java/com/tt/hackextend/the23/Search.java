@@ -1,5 +1,6 @@
 package com.tt.hackextend.the23;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -7,7 +8,6 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -30,28 +30,24 @@ public class Search extends AppCompatActivity {
         SearchResultsListView = (ListView) findViewById(R.id.searchResultsListView);
         btnSearch = (Button) findViewById(R.id.button);
         searchEditText = (EditText) findViewById(R.id.editSearchText);
+
+        arrUser = new ArrayList<User>();
+        initUsers();
+
     }
 
 
     public void searchUsers(View view) {
 
-        // Create Test array of Users:
-        arrUser = new ArrayList<User>();
-        initUsers();
-
         // Get the desired skill from the Edit Box:
         desiredSkill = searchEditText.getText().toString();
-        System.out.println("00000000000000000000000000000" + desiredSkill);
-
-        // Debug:
-        for (int i = 0; i < arrUser.size(); i++) {
-            System.out.println("00000000000000000000000000000" + arrUser.get(i).name);
-        }
 
         // Select only users with desired base skill:
-        List<User> relevantUsers = new ArrayList<User>();
+        final List<User> relevantUsers = new ArrayList<User>();
         for (User curUser : arrUser)
         {
+            //System.out.println(arrUser.get(i).name);
+            //i = i+1;
             if (desiredSkill.toLowerCase().equals(curUser.base_skill.toLowerCase())){
                 relevantUsers.add(curUser);
             }
@@ -67,8 +63,9 @@ public class Search extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String item = ((TextView)view).getText().toString();
-                System.out.println("0000000000000000000" + item);
+                Intent intent = new Intent(getApplicationContext(), ViewOtherProfile.class);
+                intent.putExtra("user", relevantUsers.get(position));
+                startActivity(intent);
             }
         });
 
@@ -83,8 +80,6 @@ public class Search extends AppCompatActivity {
         UserClient client=new UserClient(this);
         client.getUsers();
     }
-
-
     public void setUsers(List<User> users) {
         this.arrUser = users;
         SearchResultsListView.setAdapter(new SearchAdapter(arrUser,this));
@@ -92,5 +87,4 @@ public class Search extends AppCompatActivity {
     public void clickEditSearchSkill(View view) {
         searchEditText.setText("");
     }
-
 }
