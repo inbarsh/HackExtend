@@ -9,13 +9,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.tt.hackextend.the23.SplashActivity"
-    android:background="#8a66bd">
+    android:background="#ff9933">
 
     <com.tt.hackextend.the23.GifView
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:gravity="center"
         components:src="@raw/splash"
-        ></com.tt.hackextend.the23.GifView>
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"></com.tt.hackextend.the23.GifView>
 
 </RelativeLayout>
