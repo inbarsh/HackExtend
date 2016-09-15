@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "766563548068",
+    "firebase_url": "https://timebank-9fdea.firebaseio.com",
+    "project_id": "timebank-9fdea",
+    "storage_bucket": "timebank-9fdea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766563548068:android:da9a86ebb3649922",
+        "android_client_info": {
+          "package_name": "com.tt.hackextend.the23"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766563548068-6k5cju18ie30nbmei95reqb6j3n3qlqj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBplTdc3NzWgSyPDB-k0sqOwi0vgS__IMg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

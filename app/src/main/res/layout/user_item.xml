@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewPicture"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Freddy gruger"
+        android:id="@+id/textViewName"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignTop="@+id/imageViewPicture"
+        android:layout_toRightOf="@+id/imageViewPicture"
+        android:layout_toEndOf="@+id/imageViewPicture"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Tel Aviv"
+        android:id="@+id/textViewCity"
+        android:layout_alignBottom="@+id/imageViewPicture"
+        android:layout_alignLeft="@+id/textViewName"
+        android:layout_alignStart="@+id/textViewName" />
+</RelativeLayout>
