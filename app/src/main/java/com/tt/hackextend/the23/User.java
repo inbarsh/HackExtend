@@ -1,9 +1,11 @@
 package com.tt.hackextend.the23;
 
+import java.io.Serializable;
+
 /**
  * Created by yotamc on 15-Sep-16.
  */
-public class User implements Comparable<User>{
+public class User implements Comparable<User>,Serializable{
 
     public String name;
     public String phone_number;
