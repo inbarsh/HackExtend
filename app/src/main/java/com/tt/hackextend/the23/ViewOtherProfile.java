@@ -43,7 +43,7 @@ public class ViewOtherProfile extends AppCompatActivity {
         Intent i = new Intent(Intent.ACTION_SEND);
         i.setType("text/plain");
         i.putExtra(Intent.EXTRA_EMAIL, new String[]{user.email});
-        i.putExtra(Intent.EXTRA_SUBJECT, "A Message From Timr Bank");
+        i.putExtra(Intent.EXTRA_SUBJECT, "A Message From Time Bank");
         i.putExtra(Intent.EXTRA_TEXT, "I want to learn "+user.want_skill);
         try {
             startActivity(Intent.createChooser(i, "Send mail..."));
