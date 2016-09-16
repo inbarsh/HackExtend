@@ -3,12 +3,17 @@ package com.tt.hackextend.the23;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,6 +26,7 @@ public class Search extends AppCompatActivity {
     String desiredSkill;
     EditText searchEditText;
     private List<User> arrUser;
+    FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +36,7 @@ public class Search extends AppCompatActivity {
         SearchResultsListView = (ListView) findViewById(R.id.searchResultsListView);
         btnSearch = (Button) findViewById(R.id.button);
         searchEditText = (EditText) findViewById(R.id.editSearchText);
-
+        firebaseAuth = FirebaseAuth.getInstance();
         arrUser = new ArrayList<User>();
         initUsers();
 
@@ -44,11 +50,10 @@ public class Search extends AppCompatActivity {
 
         // Select only users with desired base skill:
         final List<User> relevantUsers = new ArrayList<User>();
-        for (User curUser : arrUser)
-        {
+        for (User curUser : arrUser) {
             //System.out.println(arrUser.get(i).name);
             //i = i+1;
-            if (desiredSkill.toLowerCase().equals(curUser.base_skill.toLowerCase())){
+            if (desiredSkill.toLowerCase().equals(curUser.base_skill.toLowerCase())) {
                 relevantUsers.add(curUser);
             }
         }
@@ -77,14 +82,36 @@ public class Search extends AppCompatActivity {
     }
 
     private void initUsers() {
-        UserClient client=new UserClient(this);
+        UserClient client = new UserClient(this);
         client.getUsers();
     }
+
     public void setUsers(List<User> users) {
         this.arrUser = users;
-        SearchResultsListView.setAdapter(new SearchAdapter(arrUser,this));
+        SearchResultsListView.setAdapter(new SearchAdapter(arrUser, this));
     }
+
     public void clickEditSearchSkill(View view) {
         searchEditText.setText("");
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.logout_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_logout:
+                firebaseAuth.signOut();
+                finish();
+                startActivity(new Intent(this,Main.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

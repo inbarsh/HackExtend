@@ -8,30 +8,63 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.tt.hackextend.the23.Main"
-    android:background="@drawable/star_page">
+    android:background="@drawable/bkgempty">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="TEEEE"
-        android:id="@+id/textViewSignUpMain"
-        android:layout_marginBottom="103dp"
-        android:textSize="30sp"
-        android:textColor="#00ffffff"
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/imageViewLoginMain"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="176dp"
+        android:src="@drawable/login" />
 
-    <TextView
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/imageView4"
+        android:src="@drawable/about"
+        android:layout_above="@+id/imageViewJoinMain"
+        android:layout_toLeftOf="@+id/imageViewJoinMain"
+        android:layout_toStartOf="@+id/imageViewJoinMain" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/imageViewJoinMain"
+        android:src="@drawable/join"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignLeft="@+id/imageViewLoginMain"
+        android:layout_alignStart="@+id/imageViewLoginMain" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/imageView2"
+        android:src="@drawable/contact"
+        android:layout_alignTop="@+id/imageViewLoginMain"
+        android:layout_toRightOf="@+id/imageViewLoginMain"
+        android:layout_toEndOf="@+id/imageViewLoginMain"
+        android:layout_marginTop="47dp" />
+
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="TEEEE"
-        android:id="@+id/textViewLogInMain"
-        android:layout_marginBottom="51dp"
-        android:textSize="30sp"
-        android:textColor="#00ffffff"
-        android:layout_above="@+id/textViewSignUpMain"
-        android:layout_alignLeft="@+id/textViewSignUpMain"
-        android:layout_alignStart="@+id/textViewSignUpMain" />
+        android:id="@+id/imageView"
+        android:src="@drawable/t1"
+        android:layout_alignTop="@+id/imageView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/imageView3"
+        android:src="@drawable/logo2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

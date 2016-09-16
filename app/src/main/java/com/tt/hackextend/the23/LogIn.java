@@ -29,8 +29,9 @@ public class LogIn extends AppCompatActivity {
         initView();
         firebaseAuth = FirebaseAuth.getInstance();
 
-        if(firebaseAuth.getCurrentUser()!=null)
-            startActivity(new Intent(this,Search.class));
+        if(firebaseAuth.getCurrentUser()!=null){
+            finish();
+            startActivity(new Intent(this,Search.class));}
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,7 +69,7 @@ public class LogIn extends AppCompatActivity {
     private void initView() {
         editTextEmail= (EditText) findViewById(R.id.editTextEmailSI);
         editTextPasssword= (EditText) findViewById(R.id.editTextPasswordSI);
-        signIn= (Button) findViewById(R.id.buttonSignIn);
+        signIn= (Button) findViewById(R.id.btnSignIn);
         progressDialog=new ProgressDialog(this);
 
 

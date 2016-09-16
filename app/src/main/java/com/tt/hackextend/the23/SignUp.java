@@ -2,14 +2,13 @@ package com.tt.hackextend.the23;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,7 +20,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
     EditText editTextEmail, editTextPasssword, editTextPhone,
             editTextCity, editTextSkill, editTextSkillWant,editTextName;
-    TextView textViewSignIn;
     Button signup;
     ProgressDialog progressDialog;
     FirebaseAuth firebaseAuth;
@@ -33,18 +31,18 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_sign_in);
         initView();
         firebaseAuth = FirebaseAuth.getInstance();
-        if (firebaseAuth.getCurrentUser() != null)
+        if (firebaseAuth.getCurrentUser() != null) {
+            finish();
             startActivity(new Intent(this, Search.class));
-
+        }
         signup.setOnClickListener(this);
-        textViewSignIn.setOnClickListener(this);
+
     }
 
     private void initView() {
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPasssword = (EditText) findViewById(R.id.editTextPasswordSI);
-        textViewSignIn = (TextView) findViewById(R.id.textViewSignIn);
-        signup = (Button) findViewById(R.id.buttonSignUp);
+        signup = (Button) findViewById(R.id.btnsubmit);
         progressDialog = new ProgressDialog(this);
         editTextPhone = (EditText) findViewById(R.id.editTextPhone);
         editTextCity = (EditText) findViewById(R.id.editTextCity);
@@ -56,10 +54,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        if (view == textViewSignIn) {
-            startActivity(new Intent(getApplicationContext(), LogIn.class));
-
-        } else if (view == signup) {
+     if (view == signup) {
             registerUser();
         }
     }
