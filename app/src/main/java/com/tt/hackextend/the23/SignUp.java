@@ -46,7 +46,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         progressDialog = new ProgressDialog(this);
         editTextPhone = (EditText) findViewById(R.id.editTextPhone);
         editTextCity = (EditText) findViewById(R.id.editTextCity);
-        editTextSkill = (EditText) findViewById(R.id.editTextSkillWant);
+        editTextSkill = (EditText) findViewById(R.id.editTextSkillGot);
         editTextSkillWant = (EditText) findViewById(R.id.editTextSkillWant);
         editTextName = (EditText) findViewById(R.id.editTextName);
         user=new User();

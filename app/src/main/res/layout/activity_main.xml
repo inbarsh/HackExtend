@@ -22,7 +22,7 @@
     <ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:id="@+id/imageView4"
+        android:id="@+id/imageViewAbout"
         android:src="@drawable/about"
         android:layout_above="@+id/imageViewJoinMain"
         android:layout_toLeftOf="@+id/imageViewJoinMain"

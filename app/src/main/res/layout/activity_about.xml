@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tt.hackextend.the23.About"
+    android:weightSum="1"
+    android:background="@drawable/bkgempty">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="About"
+        android:id="@+id/about"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="* “InterLearning” is a multi-user platform, based on peer-to-peer barter learning.
+
+* The platform provides its users an opportunity to teach skills they excel at and learn new skills they always wanted to in exchange.
+
+* The service is based on barter exchange, making the experience available for the whole community, building new friendships, opportunities and fun memories.
+
+* 1 hour of teaching gives a user 1 “star”
+
+* The user then can use this currency to take lessons from other users, not being restricted to the user he just tutored.
+"
+        android:id="@+id/aboutcontent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="0.28" />
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="Back"
+        android:id="@+id/btnBack"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/orangecircle"
+        android:layout_gravity="bottom|center"
+        android:layout_marginTop="1dp" />
+
+</LinearLayout>
