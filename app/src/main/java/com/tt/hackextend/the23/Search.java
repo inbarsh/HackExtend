@@ -88,7 +88,6 @@ public class Search extends AppCompatActivity {
 
     public void setUsers(List<User> users) {
         this.arrUser = users;
-        SearchResultsListView.setAdapter(new SearchAdapter(arrUser, this));
     }
 
     public void clickEditSearchSkill(View view) {
