@@ -8,7 +8,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by yotamc on 15-Sep-16.
@@ -42,7 +44,19 @@ public class SearchAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+        Random randomGenerator = new Random();
 
+        List<Integer> imageHolder = new ArrayList<Integer>();
+        imageHolder.add(R.drawable.face1);
+        imageHolder.add(R.drawable.face2);
+        imageHolder.add(R.drawable.face3);
+        imageHolder.add(R.drawable.face4);
+        imageHolder.add(R.drawable.face5);
+        imageHolder.add(R.drawable.face6);
+        imageHolder.add(R.drawable.face7);
+        imageHolder.add(R.drawable.face8);
+        imageHolder.add(R.drawable.face9);
+        imageHolder.add(R.drawable.face10);
         View row= inflator.inflate(R.layout.user_item,viewGroup,false);
         ImageView imageView= (ImageView) row.findViewById(R.id.imageViewPicture);
         TextView name= (TextView) row.findViewById(R.id.textViewName);
@@ -50,7 +64,7 @@ public class SearchAdapter extends BaseAdapter {
         User user=userList.get(i);
         name.setText(user.name);
         city.setText(user.city);
-        imageView.setImageResource(R.mipmap.ic_launcher);
+        imageView.setImageResource(imageHolder.get(randomGenerator.nextInt(10)));
         return row;
     }
 }
